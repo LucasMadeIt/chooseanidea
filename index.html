@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collectiv - Vote on the Best Ideas!</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌟 Collectiv</h1>
+    <p>Submit your team's most creative ideas and vote for your favorite(s).</p>
+
+    <!-- Team Invite Section -->
+    <div id="team-section">
+      <h2>Create or Join a Team</h2>
+      <button class="btn" onclick="createTeam()">Create New Team</button>
+      <p>Or join an existing team by pasting the invite link below:</p>
+      <input type="text" id="team-invite-link" placeholder="Paste invite link here" />
+      <button class="btn" onclick="joinTeam()">Join Team</button>
+      <p id="team-info" style="margin-top: 1em; font-weight: bold;"></p>
+    </div>
+
+    <!-- Idea Submission Section -->
+    <div id="input-section" style="display:none;">
+      <h2>Submit a New Idea</h2>
+      <div class="form-group">
+        <input type="text" id="idea-title" placeholder="Idea title" />
+        <textarea id="idea-description" placeholder="Brief description of the idea..." rows="3"></textarea>
+      </div>
+      <button class="btn" onclick="addIdea()">Add Idea</button>
+    </div>
+
+    <!-- Voting Section -->
+    <div id="voting-section" style="display:none;">
+      <h2>Vote on Ideas</h2>
+      <div class="vote-section" id="vote-section"></div>
+
+      <h2>📊 Leaderboard</h2>
+      <div id="chart-container">
+        <canvas id="vote-chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Invite Link Display (fixed on right) -->
+  <div id="team-invite-info" style="display:none;">
+    <h3>Your Team Invite Link</h3>
+    <p id="invite-link-text" title="Click to copy invite link"></p>
+    <button class="btn" onclick="copyInviteLink()">Copy Link</button>
+    <p style="margin-top: 10px; font-size: 14px; color: #00ffff;">
+      Share this link to invite team members.
+    </p>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
+
